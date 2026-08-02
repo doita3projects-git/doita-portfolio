@@ -31,9 +31,9 @@ export function Navbar() {
       >
         <a
           href="#home"
-          className="text-sm font-semibold tracking-tight text-foreground"
+          className="font-display text-lg font-bold tracking-tight text-foreground"
         >
-          Doita<span className="text-muted-foreground">.Seth</span>
+          Doita<span className="text-primary">.Seth</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
