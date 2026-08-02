@@ -1,12 +1,24 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Poppins } from 'next/font/google'
+import { Nunito, Fredoka, Caveat } from 'next/font/google'
 import './globals.css'
 
-const poppins = Poppins({
+const nunito = Nunito({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-nunito',
+})
+
+const fredoka = Fredoka({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-fredoka',
+})
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-caveat',
 })
 
 export const metadata: Metadata = {
@@ -35,7 +47,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#0b1220',
+  themeColor: '#1690ab',
 }
 
 export default function RootLayout({
@@ -44,7 +56,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} bg-background scroll-smooth`}>
+    <html
+      lang="en"
+      className={`${nunito.variable} ${fredoka.variable} ${caveat.variable} bg-background scroll-smooth`}
+    >
       <body className="antialiased font-sans">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
